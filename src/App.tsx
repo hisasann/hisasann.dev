@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View,
   StyleSheet,
@@ -62,7 +62,7 @@ const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
 
 const App = (props: IProps) => {
   const [clicked, setClicked] = useState(false);
-  const [animation] = useState(new Animated.Value(0));
+  const opacity = useRef(new Animated.Value(0)).current;
 
   // didUpdate
   useEffect(() => {
@@ -72,18 +72,21 @@ const App = (props: IProps) => {
 
   // logo image fadeIn animation
   const animatedStyle = {
-    opacity: animation,
+    opacity,
   };
+  // useCallback [フック API リファレンス – React](https://ja.reactjs.org/docs/hooks-reference.html#usecallback)
   const startAnimation = useCallback(() => {
-    Animated.timing(animation, {
+    Animated.timing(opacity, {
       toValue: 1,
-      duration: 750,
+      duration: 1000,
     }).start();
-  }, [animation]);
+  }, [opacity]);
   useEffect(() => {
     console.log('animation');
     startAnimation();
     return () => {};
+    // react-hooks/exhaustive-deps
+    // [安全に React Hooks を使用する - Qiita](https://qiita.com/kobayang/items/88a104c0be28e16e65e8)
   }, [startAnimation]);
 
   // logo clicked event handler
