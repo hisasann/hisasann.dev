@@ -3,8 +3,15 @@ import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 // import logo from './logo.svg';
 import './App.css';
 
+interface IProps {
+  children?: React.ReactNode;
+  style?: StyleSheet.NamedStyles<any>;
+  href?: string;
+  target?: string;
+}
+
 const logoSize: number = 300;
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<any>({
   container: {
     flex: 1,
     textAlign: 'center',
@@ -36,7 +43,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Link = (props: any) => (
+const Link = (props: IProps) => (
   <Text
     {...props}
     accessibilityRole="link"
@@ -46,7 +53,7 @@ const Link = (props: any) => (
 
 const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
 
-function App() {
+const App = (props: IProps) => {
   return (
     <View>
       <View style={styles.container}>
@@ -80,6 +87,6 @@ function App() {
       </View>
     </View>
   );
-}
+};
 
 export default App;
