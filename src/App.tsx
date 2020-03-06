@@ -1,46 +1,84 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
-import logo from './logo.svg';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+// import logo from './logo.svg';
 import './App.css';
 
+const logoSize: number = 300;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    textAlign: 'center',
+  },
+  content: {
+    backgroundColor: '#282c34',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white',
+    minHeight: '100vh',
+  },
+  logo: {
+    borderRadius: logoSize / 2,
+    height: logoSize,
+    width: logoSize,
+    marginBottom: 15,
+  },
+  text: {
+    color: 'white',
+    fontSize: 30,
+    padding: 5,
+  },
+  link: {
+    color: '#61dafb',
+    fontSize: 40,
+    padding: 5,
   },
 });
 
+const Link = (props: any) => (
+  <Text
+    {...props}
+    accessibilityRole="link"
+    style={StyleSheet.compose(styles.link, props.style)}
+  />
+);
+
+const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
+
 function App() {
   return (
-    <div className="App">
+    <View>
       <View style={styles.container}>
-        <Text>ほげ</Text>
-        <TouchableOpacity onPress={() => {
-          console.log(111);
-        }}>
-          <Text>ふが</Text>
-        </TouchableOpacity>
+        <View style={styles.content}>
+          <TouchableOpacity
+            onPress={() => { }}
+          >
+            <Image
+              accessibilityLabel="hisasann"
+              source={logoUri}
+              resizeMode="contain"
+              style={styles.logo}
+            />
+          </TouchableOpacity>
+          <Text style={styles.text}>
+            A Front-end engineer who loves
+          </Text>
+          <Text style={styles.text}>
+            #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
+          </Text>
+          <Text style={styles.text}>
+            🍜🍝🍺💈🏋🏻‍♂️
+          </Text>
+          <Link href="https://github.com/hisasann" target="_blank" style={styles.link}>
+            github/hisasann
+          </Link>
+          <Link href="https://twitter.com/hisasann" target="_blank" style={styles.link}>
+            twitter/hisasann
+          </Link>
+        </View>
       </View>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    </View>
   );
 }
 
