@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  Animated,
+} from 'react-native';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -55,19 +62,36 @@ const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
 
 const App = (props: IProps) => {
   const [clicked, setClicked] = useState(false);
+  const [animation] = useState(new Animated.Value(0));
 
+  // didUpdate
   useEffect(() => {
     console.log('ready');
-    return () => {
-    };
+    return () => {};
   }, []);
 
+  // logo image fadeIn animation
+  const animatedStyle = {
+    opacity: animation,
+  };
+  const startAnimation = useCallback(() => {
+    Animated.timing(animation, {
+      toValue: 1,
+      duration: 750,
+    }).start();
+  }, [animation]);
+  useEffect(() => {
+    console.log('animation');
+    startAnimation();
+    return () => {};
+  }, [startAnimation]);
+
+  // logo clicked event handler
   useEffect(() => {
     if (clicked) {
       console.log('thanks!!');
     }
-    return () => {
-    };
+    return () => {};
   }, [clicked]);
 
   return (
@@ -79,26 +103,38 @@ const App = (props: IProps) => {
               setClicked(true);
             }}
           >
-            <Image
-              accessibilityLabel="hisasann"
-              source={logoUri}
-              resizeMode="contain"
-              style={styles.logo}
-            />
+            <Animated.View style={[styles.animatedBox, animatedStyle]}>
+              <Image
+                accessibilityLabel="hisasann"
+                source={logoUri}
+                resizeMode="contain"
+                style={styles.logo}
+              />
+            </Animated.View>
           </TouchableOpacity>
           <Text style={styles.text}>
-{`
+            {`
 A Front-end engineer who loves
 #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
 `}
           </Text>
           <Text style={styles.text}>
-            <span role="img" aria-label="Ramen">🍜🍝🍺💈🏋🏻‍♂️</span>
+            <span role="img" aria-label="Ramen">
+              🍜🍝🍺💈🏋🏻‍♂️
+            </span>
           </Text>
-          <Link href="https://github.com/hisasann" target="_blank" style={styles.link}>
+          <Link
+            href="https://github.com/hisasann"
+            target="_blank"
+            style={styles.link}
+          >
             github/hisasann
           </Link>
-          <Link href="https://twitter.com/hisasann" target="_blank" style={styles.link}>
+          <Link
+            href="https://twitter.com/hisasann"
+            target="_blank"
+            style={styles.link}
+          >
             twitter/hisasann
           </Link>
         </View>
