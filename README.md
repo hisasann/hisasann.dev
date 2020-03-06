@@ -55,6 +55,8 @@ function App() {
 
 [Expo Web（React Native for web）チュートリアル | TOAST Meetup](https://meetup-jp.toast.com/1883)
 
+[React Native + Expo + TypeScriptで作るモバイルアプリ (Part1 - NativeBase編) - Fusic Tech Blog](https://tech.fusic.co.jp/posts/2019-10-30-react-native-expo-typescript-native-base/)
+
 [React Native - CodeSandbox](https://codesandbox.io/s/q4qymyp2l6)
 
 
