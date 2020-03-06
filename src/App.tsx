@@ -7,8 +7,6 @@ import {
   TouchableOpacity,
   Animated,
 } from 'react-native';
-// import logo from './logo.svg';
-import './App.css';
 
 interface IProps {
   children?: React.ReactNode;
@@ -116,7 +114,7 @@ const App = (props: IProps) => {
             </Animated.View>
           </TouchableOpacity>
           <Text style={styles.text}>
-            {`
+{`
 A Front-end engineer who loves
 #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
 `}
