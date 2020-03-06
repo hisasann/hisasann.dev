@@ -1,4 +1,4 @@
-# 🦑 hisasann.dev with React Native Web 🦑
+# 🦑 hisasann.dev using React Native Web 🦑
 
 ## React Native Webを使うためのプロジェクト作成（create-react-app）
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
 function App() {
   return (
-    <div className="App">
+    <View>
       <View style={styles.container}>
         <Text>title</Text>
         <TouchableOpacity onPress={() => {
@@ -40,7 +40,7 @@ function App() {
           <Text>ボタン</Text>
         </TouchableOpacity>
       </View>
-    </div>
+    </View>
   );
 }
 ```
@@ -51,6 +51,11 @@ function App() {
 
 [Create React Appで作成したReactアプリにReact Native for Webを導入する ｜ Developers.IO](https://dev.classmethod.jp/client-side/javascript/introduce-react-native-for-web/)
 
+[react-native-web を試す - Qiita](https://qiita.com/propella/items/4cfd01506c72dc3d63ea)
+
+[Expo Web（React Native for web）チュートリアル | TOAST Meetup](https://meetup-jp.toast.com/1883)
+
+[React Native - CodeSandbox](https://codesandbox.io/s/q4qymyp2l6)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
