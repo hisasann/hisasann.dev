@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 // import logo from './logo.svg';
 import './App.css';
@@ -54,12 +54,30 @@ const Link = (props: IProps) => (
 const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
 
 const App = (props: IProps) => {
+  const [clicked, setClicked] = useState(false);
+
+  useEffect(() => {
+    console.log('ready');
+    return () => {
+    };
+  }, []);
+
+  useEffect(() => {
+    if (clicked) {
+      console.log('thanks!!');
+    }
+    return () => {
+    };
+  }, [clicked]);
+
   return (
     <View>
       <View style={styles.container}>
         <View style={styles.content}>
           <TouchableOpacity
-            onPress={() => { }}
+            onPress={() => {
+              setClicked(true);
+            }}
           >
             <Image
               accessibilityLabel="hisasann"
@@ -75,7 +93,7 @@ const App = (props: IProps) => {
             #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
           </Text>
           <Text style={styles.text}>
-            🍜🍝🍺💈🏋🏻‍♂️
+            <span role="img" aria-label="Ramen">🍜🍝🍺💈🏋🏻‍♂️</span>
           </Text>
           <Link href="https://github.com/hisasann" target="_blank" style={styles.link}>
             github/hisasann
