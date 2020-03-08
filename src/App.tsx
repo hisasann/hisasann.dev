@@ -115,13 +115,13 @@ const App = (props: IProps) => {
           </TouchableOpacity>
           <Text style={styles.text}>
 {`
-A Front-end engineer who loves
+🍭 A Front-end engineer who loves
 #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
 `}
           </Text>
           <Text style={styles.text}>
             <span role="img" aria-label="Ramen">
-              🍜🍝🍺💈🏋🏻‍♂️
+              🍜🍝🍺💈🏋🏻‍♂️🍉🥯🍅
             </span>
           </Text>
           <Link
