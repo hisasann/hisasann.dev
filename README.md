@@ -1,4 +1,4 @@
-# 🦑 hisasann.dev using React Native Web 🦑
+# 🎂 hisasann.dev using React Native Web 🥮
 
 ## React Native Webを使うためのプロジェクト作成（create-react-app）
 
@@ -58,6 +58,12 @@ function App() {
 [React Native + Expo + TypeScriptで作るモバイルアプリ (Part1 - NativeBase編) - Fusic Tech Blog](https://tech.fusic.co.jp/posts/2019-10-30-react-native-expo-typescript-native-base/)
 
 [React Native - CodeSandbox](https://codesandbox.io/s/q4qymyp2l6)
+
+## shell をもっと勉強したい
+
+```bash
+$ curl https://hisasann.dev/sh -sSfL | sh
+```
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
