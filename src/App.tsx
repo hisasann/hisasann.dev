@@ -115,7 +115,7 @@ const App = (props: IProps) => {
           </TouchableOpacity>
           <Text style={styles.text}>
 {`
-🍭 A Front-end engineer who loves
+🍭 Software Engineer who loves
 #Electron #Vim #Unity #React #RN #Nuxt #TypeScript #筋トレ
 `}
           </Text>
