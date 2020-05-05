@@ -91,7 +91,7 @@ const App = (props: IProps) => {
   // logo clicked event handler
   useEffect(() => {
     if (clicked) {
-      console.log('thanks!!');
+      console.log('thanks🥡');
     }
     return () => {};
   }, [clicked]);
