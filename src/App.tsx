@@ -77,6 +77,7 @@ const App = (props: IProps) => {
     Animated.timing(opacity, {
       toValue: 1,
       duration: 1000,
+      useNativeDriver: true
     }).start();
   }, [opacity]);
   useEffect(() => {
