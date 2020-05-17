@@ -56,7 +56,7 @@ const Link = (props: IProps) => (
   />
 );
 
-const logoUri = { uri: 'assets/images/hisasann_400x400.jpg' };
+const logoUri = { uri: 'assets/images/hisasann-256.png' };
 
 const App = (props: IProps) => {
   const [clicked, setClicked] = useState(false);
