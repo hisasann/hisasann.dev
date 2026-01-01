@@ -11,6 +11,7 @@ function App() {
   });
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [email, setEmail] = useState('');
 
   useEffect(() => {
     const root = document.documentElement;
@@ -22,6 +23,12 @@ function App() {
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
+
+  useEffect(() => {
+    // メールアドレスを動的に生成（スパムボット対策）
+    const parts = ['hisasann25', '@', 'gmail', '.', 'com'];
+    setEmail(parts.join(''));
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -89,6 +96,7 @@ function App() {
       'YouTube Game': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
       'Diary': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>',
       'Youtrust': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M12 14v6"/><path d="M8 18h8"/><path d="M10 12l2 2 4-4"/></svg>',
+      'Email': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
     };
     return icons[name] || '';
   };
@@ -213,6 +221,18 @@ function App() {
                   {index < links.length - 1 && ' '}
                 </span>
               ))}
+              {email && (
+                <>
+                  {' '}
+                  <a
+                    href={`mailto:${email}`}
+                    className="link link-email"
+                  >
+                    <span className="link-icon" dangerouslySetInnerHTML={{ __html: getIcon('Email') }} />
+                    Email
+                  </a>
+                </>
+              )}
             </p>
           </article>
         </div>

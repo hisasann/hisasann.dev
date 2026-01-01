@@ -10,6 +10,8 @@ function OneOnOneConsultingProposal() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
+  const [email, setEmail] = useState('');
+
   useEffect(() => {
     const root = document.documentElement;
     if (isDark) {
@@ -20,6 +22,12 @@ function OneOnOneConsultingProposal() {
       localStorage.setItem('theme', 'light');
     }
   }, [isDark]);
+
+  useEffect(() => {
+    // メールアドレスを動的に生成（スパムボット対策）
+    const parts = ['hisasann25', '@', 'gmail', '.', 'com'];
+    setEmail(parts.join(''));
+  }, []);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -82,7 +90,7 @@ function OneOnOneConsultingProposal() {
 
           <section>
             <p>形骸化した1on1が、メンバーの成長を阻害していませんか？<br />
-            本質を突いた1on1は、チームのパフォーマンスを飛躍的に向上させます。</p>
+              本質を突いた1on1は、チームのパフォーマンスを飛躍的に向上させます。</p>
           </section>
 
           <section>
@@ -123,7 +131,7 @@ function OneOnOneConsultingProposal() {
 
             <div className="highlight-box">
               <p><strong>退職の兆候やコンフリクトの検知は、1on1でしか拾えないことが多い。</strong><br />
-              これは、日常のミーティングでは決して出てこない、1on1だからこそ聞ける本音なのです。</p>
+                これは、日常のミーティングでは決して出てこない、1on1だからこそ聞ける本音なのです。</p>
             </div>
           </section>
 
@@ -179,7 +187,7 @@ function OneOnOneConsultingProposal() {
               </ul>
 
               <p><strong>形式：</strong> オンライン/対面 いずれも対応可能<br />
-              <strong>対象：</strong> 5名〜30名程度のマネージャー/リーダー層</p>
+                <strong>対象：</strong> 5名〜30名程度のマネージャー/リーダー層</p>
             </div>
 
             <div className="service-section">
@@ -194,7 +202,7 @@ function OneOnOneConsultingProposal() {
               </ul>
 
               <p><strong>期間：</strong> 3ヶ月〜6ヶ月<br />
-              <strong>対象：</strong> エンジニアリング組織、スタートアップ、成長企業</p>
+                <strong>対象：</strong> エンジニアリング組織、スタートアップ、成長企業</p>
             </div>
 
             <div className="service-section">
@@ -208,7 +216,7 @@ function OneOnOneConsultingProposal() {
               </ul>
 
               <p><strong>形式：</strong> 月1〜2回の定期セッション<br />
-              <strong>期間：</strong> 応相談</p>
+                <strong>期間：</strong> 応相談</p>
             </div>
           </section>
 
@@ -287,7 +295,7 @@ function OneOnOneConsultingProposal() {
             </ul>
             <h3 style={{ marginTop: '30px', border: 'none', padding: 0 }}>お問い合わせ方法</h3>
             <ul style={{ marginTop: '15px' }}>
-              <li>Email: hi@hisasann.dev</li>
+              {email && <li>Email: <a href={`mailto:${email}`} className="link-email">{email}</a></li>}
               <li>Twitter/X: @hisasann</li>
             </ul>
           </div>

@@ -171,6 +171,24 @@
   margin-bottom: 8px;
 }
 
+.contact-section .link-email {
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-section .link-email:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
 .consulting-footer {
   text-align: center;
   margin-top: 60px;
@@ -217,4 +235,3 @@
     height: 100px;
   }
 }
-
