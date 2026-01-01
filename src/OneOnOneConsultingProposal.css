@@ -171,6 +171,18 @@
   margin-bottom: 8px;
 }
 
+.contact-section .link {
+  color: var(--bg);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 2px;
+}
+
+.contact-section .link:hover {
+  text-decoration-color: var(--bg);
+  opacity: 0.8;
+}
+
 .contact-section .link-email {
   font-weight: 600;
   padding: 4px 12px;

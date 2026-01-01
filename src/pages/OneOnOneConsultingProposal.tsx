@@ -296,7 +296,7 @@ function OneOnOneConsultingProposal() {
             <h3 style={{ marginTop: '30px', border: 'none', padding: 0 }}>お問い合わせ方法</h3>
             <ul style={{ marginTop: '15px' }}>
               {email && <li>Email: <a href={`mailto:${email}`} className="link-email">{email}</a></li>}
-              <li>Twitter/X: @hisasann</li>
+              <li>Twitter/X: <a href="https://x.com/hisasann" target="_blank" rel="noopener noreferrer" className="link">@hisasann</a></li>
             </ul>
           </div>
 
