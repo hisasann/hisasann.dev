@@ -72,7 +72,7 @@ function OneOnOneConsultingProposal() {
 
           <div className="profile-section">
             <div className="profile-image">
-              <img src="/assets/profile.png" alt="プロフィール写真" />
+              <img src="/profile.png" alt="プロフィール写真" />
             </div>
             <div className="profile-text">
               <p>試行錯誤を重ねながら、実際のマネジメント現場で1on1のスタイルを確立してきました。</p>
