@@ -68,12 +68,12 @@ function App() {
     greeting: 'こんにちは！hisasann です。ソフトウェアエンジニアであり、組織開発に取り組み、本屋「玉葱堂🧅」を営んでいます。',
     intro: 'エンジニアリング組織のVPoEとして、チームの可能性を最大化することに取り組んできました。1on1を通じた組織開発、マネジメントの本質、そして個人と組織の成長について、実践的な知見を積み重ねてきました。',
     experience: 'VPoEとして、エンジニアリング組織の強化とマネジメント文化の構築に取り組んできました。現在は1on1コンサルティングを通じて、組織の可能性を最大化し、メンバー一人ひとりの成長を支援しています。',
-    philosophy: '組織開発と人材開発の本質を見極め、実践的なアプローチで組織変革を支援します。東洋哲学や西洋思想から得た知見を、現代の組織開発に活かしています。',
+    philosophy: '組織開発と人材開発の本質を見極め、実践的なアプローチで組織変革を支援します。脳科学や心理学から得た知見を、現代の組織開発に活かしています。',
     findMe: 'Find me on',
     greetingEn: "Hey! I'm hisasann, a software engineer working on organizational development, and bookstore owner of 玉葱堂🧅.",
     introEn: 'As VPoE of engineering organizations, I worked on maximizing team potential. Through 1on1 consulting, I support organizational development, management essentials, and individual and organizational growth with practical insights.',
     experienceEn: 'As VPoE, I worked on strengthening engineering organizations and building management culture. Currently, through 1on1 consulting, I maximize organizational potential and support each member\'s growth.',
-    philosophyEn: 'I identify the essence of organizational and human development, supporting organizational transformation with practical approaches. I apply insights from Eastern philosophy and Western thought to modern organizational development.',
+    philosophyEn: 'I identify the essence of organizational and human development, supporting organizational transformation with practical approaches. I apply insights from brain science and psychology to modern organizational development.',
     findMeEn: 'Find me on',
   };
 
